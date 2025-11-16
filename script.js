@@ -100,3 +100,17 @@ window.addEventListener('click', (event) => {
     closeModal(modalVideoCodeIgniter);
   }
 });
+
+// 7. Tutup modal jika menekan tombol "Escape"
+document.addEventListener('keydown', (event) => {
+  // Periksa apakah tombol yang ditekan adalah 'Escape'
+  if (event.key === 'Escape') {
+    // Jika ya, jalankan fungsi closeModal pada setiap modal.
+    // Tidak masalah jika modalnya sudah tertutup,
+    // .remove() tidak akan error jika kelasnya tidak ada.
+    closeModal(modalLaravel);
+    closeModal(modalCodeIgniter);
+    closeModal(modalVideo);
+    closeModal(modalVideoCodeIgniter);
+  }
+});

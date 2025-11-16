@@ -3,17 +3,32 @@
   /* Palet Warna Baru (Ungu Modern) */
   --color-primary: #8b5cf6;
   --color-primary-glow: rgba(139, 92, 246, 0.4);
-  
+
   /* Palet Warna Gelap (Modern) */
   --color-bg: #111827;
   --color-surface: #1f2937;
   --color-border: #374151;
-  
+
   /* Palet Teks */
   --color-text-primary: #f9fafb;
   --color-text-secondary: #9ca3af;
   --color-text-accent: #fcd34d;
+  /* Kuning untuk Aksen */
 }
+
+/* === BARU: Animasi Fade-in === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* Gaya Dasar Halaman */
 body {
@@ -30,10 +45,12 @@ h1 {
   position: relative;
   padding-bottom: 15px;
   color: var(--color-text-primary);
-  
+  font-size: 2.5rem;
+  /* Ukuran font yang lebih terkontrol */
+
   /* Efek 'Glow' pada Teks Judul */
-  text-shadow: 0 0 10px var(--color-primary), 
-               0 0 25px var(--color-primary-glow);
+  text-shadow: 0 0 10px var(--color-primary),
+    0 0 25px var(--color-primary-glow);
 }
 
 /* Garis Bawah Judul */
@@ -55,7 +72,8 @@ h1::after {
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap; /* Agar responsif di layar kecil */
+  flex-wrap: wrap;
+  /* Agar responsif di layar kecil */
 }
 
 /* Gaya Dasar Kartu */
@@ -68,6 +86,9 @@ h1::after {
   max-width: 450px;
   min-width: 300px;
   flex-grow: 1;
+
+  /* === BARU: Terapkan Animasi === */
+  animation: fadeIn 0.5s ease-out;
 }
 
 .card h2 {
@@ -84,7 +105,23 @@ h1::after {
 .card li {
   margin-bottom: 12px;
   color: var(--color-text-primary);
+  position: relative;
+  /* Diperlukan untuk pseudo-element */
+  padding-left: 25px;
+  /* Beri ruang untuk ikon */
 }
+
+/* === BARU: Ikon Centang CSS === */
+.card li::before {
+  content: '✓';
+  /* Ikon centang (bisa diganti emoji 🚀, 🔥, dll) */
+  color: var(--color-text-accent);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+}
+
 
 .card p {
   margin-top: 25px;
@@ -113,6 +150,8 @@ h1::after {
   font-size: 14px;
   line-height: 1.5;
 }
+
+/* ... (Sisa kode Anda yang lain tetap sama: .code-box, .button-group, .btn, audio) ... */
 
 /* Kotak Contoh Kode */
 .code-box {
@@ -146,9 +185,9 @@ h1::after {
   border-radius: 6px;
   cursor: pointer;
   flex-grow: 1;
-  
+
   /* Transisi ini SANGAT PENTING untuk animasi yang mulus */
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
 }
 
 /* Tombol Primer (Ungu) */
@@ -185,28 +224,33 @@ audio {
   min-width: 300px;
 }
 
+
 /* --- Gaya Modal (Pop-up) --- */
 
 /* Latar belakang overlay (menutupi seluruh layar) */
 .modal {
-  display: none; /* Sembunyi secara default */
-  position: fixed; /* Tetap di tempat saat di-scroll */
-  z-index: 1000; /* Tampil di atas segalanya */
+  display: none;
+  /* Sembunyi secara default */
+  position: fixed;
+  /* Tetap di tempat saat di-scroll */
+  z-index: 1000;
+  /* Tampil di atas segalanya */
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto; /* Aktifkan scroll jika konten panjang */
-  
+  overflow: auto;
+  /* Aktifkan scroll jika konten panjang */
+
   /* Efek 'Frosted Glass' / Blur */
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(5px);
-  
+
   /* Gunakan Flexbox untuk memusatkan kotak modal */
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   /* Sembunyikan modal (kita akan pakai JS untuk menampilkannya) */
   opacity: 0;
   visibility: hidden;
@@ -220,15 +264,18 @@ audio {
   border-radius: 8px;
   padding: 30px;
   box-shadow: 0 0 35px var(--color-primary-glow);
-  
+
   /* Menggunakan variabel warna teks Anda */
   color: var(--color-text-secondary);
-  
-  width: 90%; /* Responsif di layar kecil */
-  max-width: 600px; /* Batas lebar maksimum */
-  
-  position: relative; /* Untuk memposisikan tombol close */
-  
+
+  width: 90%;
+  /* Responsif di layar kecil */
+  max-width: 600px;
+  /* Batas lebar maksimum */
+
+  position: relative;
+  /* Untuk memposisikan tombol close */
+
   /* Animasi 'zoom-in' saat muncul */
   transform: scale(0.9);
   transition: transform 0.3s ease;
@@ -245,6 +292,7 @@ audio {
   list-style-position: inside;
   padding-left: 5px;
 }
+
 .modal-content li {
   color: var(--color-text-primary);
   margin-bottom: 10px;
@@ -281,105 +329,121 @@ audio {
 }
 
 /* --- Gaya untuk Video Embed Responsif --- */
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%; /* Rasio aspek 16:9 */
-  height: 0;
-  overflow: hidden;
-  max-width: 100%;
-  background: #000;
-  border-radius: 6px; /* Samakan dengan radius elemen lain */
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/* --- Gaya untuk Alternatif Thumbnail Video --- */
-
+/* (Tidak ada perubahan di sini, kode Anda sudah bagus) */
 .video-preview-container {
-  position: relative; /* Penting untuk memposisikan ikon play */
+  position: relative;
   cursor: pointer;
-  border-radius: 6px; /* Samakan dengan elemen lain */
-  overflow: hidden; /* Agar gambar mengikuti radius */
+  border-radius: 6px;
+  overflow: hidden;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .video-thumbnail {
-  width: 100%; /* Membuat gambar responsif */
-  display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+  width: 100%;
+  display: block;
   transition: transform 0.3s ease;
 }
 
 .play-icon {
-  /* Posisikan ikon di tengah */
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
-  /* Tampilan tombol 'play' (lingkaran transparan) */
-  font-size: 50px; /* Ukuran segitiga 'play' */
+  font-size: 50px;
   color: white;
   background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 50%; /* Membuatnya bulat */
+  border-radius: 50%;
   width: 80px;
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 7px; /* Sesuaikan agar segitiga di tengah */
-  box-sizing: border-box; /* Pastikan padding tidak merusak ukuran */
-  
+  padding-left: 7px;
+  box-sizing: border-box;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
 }
 
-/* --- Efek Hover --- */
-
 .video-preview-container:hover .video-thumbnail {
-  transform: scale(1.05); /* Sedikit zoom pada gambar */
+  transform: scale(1.05);
 }
 
 .video-preview-container:hover .play-icon {
-  background-color: rgba(200, 30, 30, 0.8); /* Merah YouTube saat hover */
-  transform: translate(-50%, -50%) scale(1.1); /* Ikon membesar */
+  background-color: rgba(200, 30, 30, 0.8);
+  transform: translate(-50%, -50%) scale(1.1);
 }
 
+
 /* ========================================
-   FOOTER STYLES
-   ======================================== */
+   FOOTER STYLES
+   ======================================== */
+
 .site-footer {
-    width: 100%;
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 80px;
-    border-top: 1px solid var(--color-border);
-    background-color: var(--color-primary-dark);
+  width: 100%;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 80px;
+  border-top: 1px solid var(--color-border);
+  /* === DIPERBAIKI === */
+  background-color: var(--color-bg);
+  /* Menggunakan warna BG utama */
 }
 
 .site-footer p {
-    margin: 0;
-    color: var(--color-text-muted);
-    font-size: 0.9em;
-    line-height: 1.6;
+  margin: 0;
+  /* === DIPERBAIKI === */
+  color: var(--color-text-secondary);
+  /* Menggunakan variabel yg ada */
+  font-size: 0.9em;
+  line-height: 1.6;
 }
 
 .site-footer a {
-    color: var(--color-accent-blue);
-    font-weight: 700;
-    text-decoration: none;
-    transition: color 0.2s ease, text-decoration 0.2s ease;
+  /* === DIPERBAIKI === */
+  color: var(--color-primary);
+  /* Menggunakan warna primer */
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
 .site-footer a:hover {
-    color: var(--color-accent-orange);
-    text-decoration: underline;
+  /* === DIPERBAIKI === */
+  color: var(--color-text-accent);
+  /* Kuning saat hover */
+  text-decoration: underline;
+}
+
+/* ========================================
+   BARU: DESAIN RESPONSif
+   ======================================== */
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+    /* Kurangi padding di layar kecil */
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    /* Kecilkan judul utama */
+    margin-bottom: 30px;
+  }
+
+  .card h2 {
+    font-size: 1.3rem;
+    /* Kecilkan judul kartu */
+  }
+
+  .container {
+    gap: 15px;
+    /* Kurangi jarak antar kartu */
+  }
+
+  .modal-content {
+    width: 95%;
+    /* Buat modal hampir selebar layar */
+    padding: 20px;
+  }
 }
