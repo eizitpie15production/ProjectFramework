@@ -25,18 +25,14 @@
                     pada sintaks yang elegan dan kemudahan developer. Filosofi ini membuatnya jadi pilihan utama untuk
                     membangun aplikasi web modern.</p>
             </div>
-
             <p><strong>Contoh Nyata:</strong> Bayangkan membangun sistem e-commerce. Laravel (dengan Eloquent)
                 memudahkan pengelolaan data produk, pengguna, dan pesanan...</p>
+
             <div class="button-group">
-                <button class="btn btn-primary">Selengkapnya</button>
+                <button class="btn btn-primary" id="btn-laravel">Selengkapnya</button>
                 <button class="btn btn-secondary">Dokumentasi</button>
             </div>
-
-
         </div>
-
-
 
         <div class="card">
             <h2>2. Framework CodeIgniter 🔥</h2>
@@ -53,16 +49,100 @@
                 memungkinkan Anda membangunnya dengan cepat...</p>
 
             <div class="button-group">
-                <button class="btn btn-primary">Selengkapnya</button>
+                <button class="btn btn-primary" id="btn-codeigniter">Selengkapnya</button>
                 <button class="btn btn-secondary">Dokumentasi</button>
             </div>
         </div>
 
     </div>
+    <div id="laravelModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Laravel: Elegan untuk Web Artisans 🚀</h2>
+            <p>Laravel adalah *framework* PHP paling populer, dikenal karena sintaksnya yang ekspresif dan fitur-fitur
+                modern seperti Eloquent ORM...</p>
+
+            <h3>Fitur Unggulan:</h3>
+            <ul>
+                <li><strong>MVC Architecture:</strong> Struktur kode yang rapi.</li>
+                <li><strong>Eloquent ORM:</strong> Interaksi database yang intuitif.</li>
+                <li><strong>Blade Template Engine:</strong> Templating yang kuat dan cepat.</li>
+                <li><strong>Artisan CLI:</strong> Alat baris perintah yang membantu produktivitas.</li>
+            </ul>
+            <div class="button-group" style="justify-content: flex-end; flex-wrap: wrap;">
+                <button class="btn btn-primary" id="btn-video-laravel">Video Perkenalan</button>
+                <button class="btn btn-primary" onclick="window.open('https://laravel.com/docs', '_blank')">Pelajari
+                    Lebih Lanjut</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="codeigniterModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>CodeIgniter: Ringan & Cepat 🔥</h2>
+            <p>CodeIgniter adalah *framework* PHP yang ringan, cepat, dan mudah dipelajari. Dengan konfigurasi minimal,
+                sangat cocok untuk proyek-k... </p>
+
+            <h3>Fitur Unggulan:</h3>
+            <ul>
+                <li><strong>Small Footprint:</strong> Ukuran *framework* yang kecil.</li>
+                <li><strong>Exceptional Performance:</strong> Eksekusi aplikasi sangat cepat.</li>
+                <li><strong>Minimal Configuration:</strong> Mudah disiapkan dan dijalankan.</li>
+                <li><strong>Clear Documentation:</strong> Dokumentasi yang mudah dipahami.</li>
+            </ul>
+            <div class="button-group" style="justify-content: flex-end; flex-wrap: wrap;">
+                <button class="btn btn-primary" id="btn-video-ci">Video Perkenalan</button>
+                <button class="btn btn-primary"
+                    onclick="window.open('https://codeigniter.com/user_guide', '_blank')">Pelajari Lebih Lanjut</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Video Perkenalan: Apa itu Laravel?</h2>
+
+            <div class="video-preview-container">
+                <a href="https://www.youtube.com/watch?v=lB9OUcxnuss" target="_blank" rel="noopener noreferrer">
+                    <img src="https://img.youtube.com/vi/lB9OUcxnuss/hqdefault.jpg"
+                        alt="Thumbnail video perkenalan Laravel" class="video-thumbnail">
+                    <span class="play-icon">&#9658;</span>
+                </a>
+            </div>
+
+            <h3>Kesimpulan Singkat Video</h3>
+            <p>Video ini menyajikan analisis mendalam mengenai mengapa Laravel, sebuah framework PHP, menjadi pilihan
+                yang sangat direkomendasikan...</p>
+            <p>Video ini menyimpulkan bahwa Laravel adalah framework yang sangat "ramah pemula" karena berhasil
+                menstandarisasi dan menyederhanakan komponen-komponen kompleks...</p>
+        </div>
+    </div>
+
+    <div id="videoModalCodeIgniter" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Video Perkenalan: Apa itu CodeIgniter?</h2>
+
+            <div class="video-preview-container">
+                <a href="https://www.youtube.com/watch?v=yx18oMq2Yeo" target="_blank" rel="noopener noreferrer">
+                    <img src="https://img.youtube.com/vi/yx18oMq2Yeo/hqdefault.jpg"
+                        alt="Thumbnail video perkenalan CodeIgniter" class="video-thumbnail">
+                    <span class="play-icon">&#9658;</span>
+                </a>
+            </div>
+
+            <h3>Kesimpulan Singkat Video</h3>
+            <p>Video ini adalah perkenalan singkat tentang framework CodeIgniter, menjelaskan fitur-fitur utamanya dan
+                mengapa framework ini dikenal sangat cepat dan ringan.</p>
+        </div>
+    </div>
 
 
     <audio src="Pebble.mp3" autoplay loop></audio>
     <script src="script.js"></script>
+
 </body>
 
 </html>
