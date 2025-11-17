@@ -32,7 +32,7 @@
 
             <div class="button-group">
                 <button class="btn btn-primary" id="btn-laravel">Selengkapnya</button>
-                <button class="btn btn-secondary">Dokumentasi</button>
+                <button class="btn btn-secondary" id="btn-doc-laravel">Dokumentasi</button>
             </div>
         </div>
 
@@ -52,7 +52,7 @@
 
             <div class="button-group">
                 <button class="btn btn-primary" id="btn-codeigniter">Selengkapnya</button>
-                <button class="btn btn-secondary">Dokumentasi</button>
+                <button class="btn btn-secondary" id="btn-doc-ci">Dokumentasi</button>
             </div>
         </div>
 
@@ -138,6 +138,56 @@
             <h3>Kesimpulan Singkat Video</h3>
             <p>Video ini adalah perkenalan singkat tentang framework CodeIgniter, menjelaskan fitur-fitur utamanya dan
                 mengapa framework ini dikenal sangat cepat dan ringan.</p>
+        </div>
+    </div>
+
+    <div id="modalDocLaravel" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Kategori Pembahasan Laravel 🚀</h2>
+            <p>Pilih sumber daya yang ingin Anda jelajahi:</p>
+
+            <div class="button-group" style="flex-direction: column; gap: 15px;">
+
+                <button class="btn btn-primary" onclick="window.open('https://sko.dev/belajar/laravel/', '_blank')">
+                    Dokumentasi Laravel
+                </button>
+
+                <button class="btn btn-primary"
+                    onclick="window.open('https://www.youtube.com/watch?v=upOxC-rVJsU&list=PLPqeNG7ba3a_Sz3tJ1YukfqHE5jZGBmHn&index=1', '_blank')">
+                    Playlist Video Pembahasan Laravel
+                </button>
+                
+                <button class="btn btn-primary"
+                    onclick="window.open('https://docs.google.com/document/d/1N8mLQJGAsku_katokCEoVqXC4NgtE0MeM8N9oC-HuCU/edit?usp=sharing', '_blank')">
+                    Selengkapnya tentang Laravel                
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalDocCodeIgniter" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Kategori Pembahasan CodeIgniter 🔥</h2>
+            <p>Pilih sumber daya yang ingin Anda jelajahi:</p>
+
+            <div class="button-group" style="flex-direction: column; gap: 15px;">
+
+                <button class="btn btn-primary" onclick="window.open('https://codeigniter-id.github.io/user-guide/', '_blank')">
+                    Dokumentasi Codeigniter
+                </button>
+
+                <button class="btn btn-primary"
+                    onclick="window.open('https://www.youtube.com/watch?v=Nt3YH68npW4&list=PLFIM0718LjIUkkIq1Ub6B5dYNb6IlMvtc&index=2', '_blank')">
+                    Playlist Video Pembahasan Codeigniter
+                </button>
+
+                <button class="btn btn-primary"
+                    onclick="window.open('https://docs.google.com/document/d/13p4Bk3lbMVaY-oBERWAmMj6DPhAj5AwXMi1kn3-sqtA/edit?usp=sharing', '_blank')">
+                    Selengkapnya tentang Codeigniter                 
+                </button>
+            </div>
         </div>
     </div>
 
